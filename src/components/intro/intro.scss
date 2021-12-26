@@ -1,34 +1,36 @@
+@import "../../global.scss";
+
 .intro {
     background-color: #fff;
     display: flex;
-
-    .left {
-        flex: 0.5;
-        background-color: #999;
-
-        .imgContainer {
-            img {
-                height: 90%;
-            }
-        }
-    }
+    flex-direction: column;
+    align-items: center;
 
     .right {
-        flex: 0.5;
+        width: 100%;
+        height: 100%;
         position: relative;
+        background-color: #222;
+        color: #eee;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         .wrapper {
-            width: 100%;
-            height: 100%;
             padding-left: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
 
+           
+
             h1 {
                 font-size: 60px;
                 margin: 10px 0;
+    
             }
+
             h2 {
                 font-size: 36px;
             }
@@ -37,17 +39,40 @@
 
                 span {
                     font-size: inherit;
-                    color: rgb(0, 158, 0)
+                    color: rgba(19, 182, 223, 0.623);
+                    @include mobile {
+                        font-size: 28px;
+                    }
+                   
+                }
+                .ityped-cursor {
+                    animation: blink 1s infinite;
+                }
+
+                @keyframes blink {
+                    50% {
+                        opacity: 1;
+                    }
+
+                    100% {
+                        opacity: 0;
+                    }
                 }
             }
         }
-        a {
+        .anchor {
             position: absolute;
             bottom: 10px;
             left: 50%;
+            color: #fff;
 
-            img {
-                width: 30px;
+            @include mobile {
+                left: 45%;
+            }
+           
+
+            .react-icons {
+                font-size: 40px;
                 animation: arrowBlink 2s infinite;
             }
 
